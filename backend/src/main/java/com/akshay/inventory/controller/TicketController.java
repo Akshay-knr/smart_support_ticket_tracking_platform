@@ -10,7 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/tickets")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://127.0.0.1:5500")
 public class TicketController {
 
     private final TicketService ticketService;
@@ -38,5 +38,10 @@ public class TicketController {
     public String deleteTicket(@PathVariable Long id) {
         ticketService.deleteTicket(id);
         return "Ticket deleted successfully";
+    }
+
+    @PutMapping("/{id}")
+public Ticket updateTicket(@PathVariable Long id, @RequestBody Ticket updatedTicket) {
+    return ticketService.updateTicket(id, updatedTicket);
     }
 }

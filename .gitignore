@@ -1,0 +1,15 @@
+# Maven build folder
+backend/target/
+
+# Maven internal
+backend/.mvn/
+
+# Logs
+*.log
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db

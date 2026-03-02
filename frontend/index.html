@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Support Ticket Tracking Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- TOP HEADER -->
+<div class="top-header">
+    <h1>Smart Support Ticket Tracking Platform</h1>
+
+    <div class="nav-buttons">
+        <button class="nav-btn active" id="btnAll" onclick="showAll()">All Tickets</button>
+        <button class="nav-btn" id="btnSubmit" onclick="showSubmit()">Submit Ticket</button>
+        <button class="nav-btn" id="btnStats" onclick="showStats()">Stats</button>
+    </div>
+</div>
+
+<!-- CONTENT AREA -->
+<div class="content">
+
+    <!-- ALL TICKETS -->
+    <div id="allSection">
+        <h2>All Tickets</h2>
+        <div id="tickets"></div>
+    </div>
+
+    <!-- SUBMIT -->
+    <div id="submitSection" style="display:none;">
+        <h2>Submit a New Ticket</h2>
+
+        <label>Title *</label>
+        <input type="text" id="title">
+
+        <label>Description *</label>
+        <textarea id="description"></textarea>
+
+        <div class="row">
+            <div>
+                <label>Status *</label>
+                <select id="status">
+                    <option value="OPEN">OPEN</option>
+                    <option value="IN_PROGRESS">IN_PROGRESS</option>
+                    <option value="CLOSED">CLOSED</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Priority *</label>
+                <select id="priority">
+                    <option value="HIGH">HIGH</option>
+                    <option value="MEDIUM">MEDIUM</option>
+                    <option value="LOW">LOW</option>
+                </select>
+            </div>
+        </div>
+
+        <p id="error" class="error"></p>
+
+        <button class="submit-btn" onclick="createTicket()">Submit Ticket</button>
+    </div>
+
+    <!-- STATS -->
+    <div id="statsSection" style="display:none;">
+        <h2>Statistics</h2>
+        <p>Total Tickets: <span id="totalCount">0</span></p>
+    </div>
+
+</div>
+
+<footer>
+    Developed by <span class="dev-name">Akshay_knr</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

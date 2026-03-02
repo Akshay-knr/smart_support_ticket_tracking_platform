@@ -33,4 +33,18 @@ public class TicketServiceImpl implements TicketService {
     public void deleteTicket(Long id) {
         ticketRepository.deleteById(id);
     }
+
+    @Override
+    public Ticket updateTicket(Long id, Ticket updatedTicket) {
+
+    Ticket existing = ticketRepository.findById(id)
+            .orElseThrow(() -> new RuntimeException("Ticket not found"));
+
+    existing.setTitle(updatedTicket.getTitle());
+    existing.setDescription(updatedTicket.getDescription());
+    existing.setStatus(updatedTicket.getStatus());
+    existing.setPriority(updatedTicket.getPriority());
+
+    return ticketRepository.save(existing);  
+    }
 }
